@@ -18,8 +18,8 @@ class App extends Component {
       <Layout>
         <Hero />
         <Team />
-        <Trust />
         <Cases />
+        <Trust />
         <Contact />
       </Layout>
     );

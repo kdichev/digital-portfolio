@@ -4,12 +4,12 @@ import RaisedButton from 'material-ui/RaisedButton'
 class Hero extends Component {
   render() {
     return (
-          <div className="row" style={{height: 700, backgroundColor: "#578CA9"}}>
+          <div className="row" style={{height: 550, backgroundColor: "#17223A"}}>
             {/* <VideoCover /> */}
-            <div style={{textAlign: "center", padding: 300}}>
+            <div style={{textAlign: "center", padding: 200}}>
             <h1 style={{color: "white"}}>We create digital products we are proud of. Tell us your idea.</h1>
             <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
-              <RaisedButton label="Learn more" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}}/>
+              <RaisedButton label="Learn more" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60, borderRadius: "60px"}} style={{height: 50}}/>
             </div>
           </div>
     );

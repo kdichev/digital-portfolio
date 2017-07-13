@@ -35,7 +35,7 @@ class Contact extends Component {
       />,
     ];
     return (
-      <div className="row" style={{backgroundColor: "#578CA9"}}>
+      <div className="row" style={{backgroundColor: "#17223A"}}>
         {/* <VideoCover /> */}
         <div style={{textAlign: "center", padding: 50}}>
         <h1 style={{color: "white"}}>Contact us.</h1>

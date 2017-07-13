@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 const TITLE = "Sashko"
+
 class Header extends Component {
   constructor(props) {
   super(props);
     this.state = {
-      style: {backgroundColor: "#578ca9", position: "none"},
-      titleColor: {color: "white"},
+      style: {backgroundColor: "#17223A", position: "none"},
+      titleColor: {color: "white", paddingLeft: 100},
       zDepth: 0
     };
   }
@@ -19,13 +20,13 @@ class Header extends Component {
     if (document.body.scrollTop > 64) {
       this.setState({
         style: {backgroundColor: "white", position: "fixed"},
-        titleColor: {color: "black"},
+        titleColor: {color: "black", paddingLeft: 100},
         zDepth: 1
       })
     } else {
       this.setState({
-        style: {backgroundColor: "#578ca9", position: "initial"},
-        titleColor: {color: "white"},
+        style: {backgroundColor: "#17223A", position: "initial"},
+        titleColor: {color: "white", paddingLeft: 100},
         zDepth: 0
       })
     }
