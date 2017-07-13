@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Title from './../components/Title'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import Kiosk from './../assets/kiosk.PNG'
+import eurodeli from './../assets/eurodeli.PNG'
+import vililacosta from './../assets/vililacosta.PNG'
 
 class Cases extends Component {
   render() {
@@ -10,17 +14,12 @@ class Cases extends Component {
         <Title text="Cases"/>
         <div className="col-md-4">
           <Card>
-            <CardHeader
-              title="URL Avatar"
-              subtitle="Subtitle"
-              avatar="images/jsa-128.jpg"
-            />
             <CardMedia
               overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
             >
-              <img src="images/nature-600-337.jpg" alt="" />
+              <img src={eurodeli} alt="" />
             </CardMedia>
-            <CardTitle title="Card title" subtitle="Card subtitle" />
+            <CardTitle title="Euro Deli" subtitle="e-commerce" />
             <CardText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -28,24 +27,18 @@ class Cases extends Component {
               Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
             </CardText>
             <CardActions>
-              <FlatButton label="Action1" />
-              <FlatButton label="Action2" />
+              <RaisedButton label="See more" primary={true}/>
             </CardActions>
           </Card>
         </div>
         <div className="col-md-4">
           <Card>
-            <CardHeader
-              title="URL Avatar"
-              subtitle="Subtitle"
-              avatar="images/jsa-128.jpg"
-            />
             <CardMedia
               overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
             >
-              <img src="images/nature-600-337.jpg" alt="" />
+              <img src={Kiosk} alt="" />
             </CardMedia>
-            <CardTitle title="Card title" subtitle="Card subtitle" />
+            <CardTitle title="Kiosk" subtitle="renting" />
             <CardText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -53,24 +46,18 @@ class Cases extends Component {
               Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
             </CardText>
             <CardActions>
-              <FlatButton label="Action1" />
-              <FlatButton label="Action2" />
+              <RaisedButton label="See more" primary={true}/>
             </CardActions>
           </Card>
         </div>
         <div className="col-md-4">
           <Card>
-            <CardHeader
-              title="URL Avatar"
-              subtitle="Subtitle"
-              avatar="images/jsa-128.jpg"
-            />
             <CardMedia
               overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
             >
-              <img src="images/nature-600-337.jpg" alt="" />
+              <img src={vililacosta} alt="" />
             </CardMedia>
-            <CardTitle title="Card title" subtitle="Card subtitle" />
+            <CardTitle title="Vili La Costa" subtitle="hospitality management" />
             <CardText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -78,8 +65,7 @@ class Cases extends Component {
               Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
             </CardText>
             <CardActions>
-              <FlatButton label="Action1" />
-              <FlatButton label="Action2" />
+              <RaisedButton label="See more" primary={true}/>
             </CardActions>
           </Card>
         </div>
