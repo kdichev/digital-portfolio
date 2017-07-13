@@ -5,7 +5,7 @@ class Hero extends Component {
   render() {
     return (
           <div className="row">
-            {/* <VideoCover /> */}
+            <VideoCover />
             <div
             >
             <h1>We create digital products we are proud of. Tell us your idea
