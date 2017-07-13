@@ -4,7 +4,7 @@ const TITLE = "Sashko"
 class Header extends Component {
   render() {
     return (
-      <h1 style={{textAlign: "center"}}>
+      <h1 style={{textAlign: "center", marginTop:50, marginBottom: 50}}>
         {this.props.text}
       </h1>
     );
