@@ -1,13 +1,71 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Title from './../components/Title'
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import TextField from 'material-ui/TextField';
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+  }
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
   render() {
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        keyboardFocused={true}
+        onTouchTap={this.handleClose}
+      />,
+    ];
     return (
-      <div className="row">
-        <Title text="Have a project for us?" />
-        <RaisedButton label="Contact us" primary={true}/>
+      <div className="row" style={{backgroundColor: "#578CA9"}}>
+        {/* <VideoCover /> */}
+        <div style={{textAlign: "center", padding: 50}}>
+        <h1 style={{color: "white"}}>Contact us.</h1>
+        <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
+          <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
+        <Dialog
+          title="It is easy to contact us!"
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          We will get back at you as soon as possible!
+          <br />
+          <TextField
+            hintText="John Doe"
+            floatingLabelText="Name"
+          /><br />
+          <TextField
+            hintText="johndoe@gmail.com"
+            floatingLabelText="Email"
+          /><br />
+          <TextField
+            hintText="Not Hotdog app"
+            floatingLabelText="Tell us more about your idea"
+            multiLine={true}
+            rows={2}
+          />
+        </Dialog>
+        </div>
       </div>
     );
   }
