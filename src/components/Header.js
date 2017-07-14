@@ -7,7 +7,7 @@ class Header extends Component {
   super(props);
     this.state = {
       style: {backgroundColor: "#17223A", position: "none"},
-      titleColor: {color: "white", paddingLeft: 100},
+      titleColor: {color: "white"},
       zDepth: 0
     };
   }
@@ -20,13 +20,13 @@ class Header extends Component {
     if (document.body.scrollTop > 64) {
       this.setState({
         style: {backgroundColor: "white", position: "fixed"},
-        titleColor: {color: "black", paddingLeft: 100},
+        titleColor: {color: "black"},
         zDepth: 1
       })
     } else {
       this.setState({
         style: {backgroundColor: "#17223A", position: "initial"},
-        titleColor: {color: "white", paddingLeft: 100},
+        titleColor: {color: "white"},
         zDepth: 0
       })
     }
