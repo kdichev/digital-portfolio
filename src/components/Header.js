@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import './../App.css'
 const TITLE = "SK Consulting"
-
 class Header extends Component {
   constructor(props) {
   super(props);
@@ -38,14 +39,15 @@ class Header extends Component {
   }
   render() {
     return (
-      <AppBar
-        title={TITLE}
-        showMenuIconButton={false}
-        style={this.state.style}
-        titleStyle={this.state.titleColor}
-        zDepth={this.state.zDepth}
-        ref={(header) => {this.Header = header}}
-      />
+
+        <AppBar
+          title={<ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={400}><div>{TITLE}</div></ReactCSSTransitionGroup>}
+          showMenuIconButton={false}
+          style={this.state.style}
+          titleStyle={this.state.titleColor}
+          zDepth={this.state.zDepth}
+          ref={(header) => {this.Header = header}}
+        />
     );
   }
 }
