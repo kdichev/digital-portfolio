@@ -95,3 +95,26 @@
 .slide-leave.slide-leave-active {
   max-height : 0;
 }
+
+.post-item {
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: 300ms;
+  &.postItem {
+    &-enter {
+      animation-name: growHeight, fadeIn;
+    }
+    &-leave {
+      animation-name: fall, fadeOut;
+    }
+  }
+  .remove-post {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 150ms ease-out;
+  }
+  &:hover .remove-post {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

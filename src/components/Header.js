@@ -8,7 +8,7 @@ class Header extends Component {
   constructor(props) {
   super(props);
     this.state = {
-      style: {backgroundColor: "#17223A", position: "none"},
+      style: {backgroundColor: "#17223A", position: "fixed"},
       titleColor: {color: "white"},
       zDepth: 0
     };
@@ -27,7 +27,7 @@ class Header extends Component {
       })
     } else {
       this.setState({
-        style: {backgroundColor: "#17223A", position: "initial"},
+        style: {backgroundColor: "#17223A", position: "fixed"},
         titleColor: {color: "white"},
         zDepth: 0
       })

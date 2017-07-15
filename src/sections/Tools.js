@@ -12,7 +12,7 @@ class Tools extends Component {
             <h2 style={{display: "inline-block"}}>Working agile</h2>
             <br />
             <p style={{display: "inline-block", marginLeft: 50, marginRight: 50}}>
-              Create apps for a brand new interface with bot users, slash commands and notifications.
+              We focus on eliminating the barriers to getting work done efficiently.
             </p>
           </div>
           <div className="col-md-4 text-center">
@@ -20,7 +20,7 @@ class Tools extends Component {
             <h2 style={{display: "inline-block"}}>Using top tech</h2>
             <br />
             <p style={{display: "inline-block", marginLeft: 50, marginRight: 50}}>
-              Connect with Slack's 4 million daily active users through the App Directory.
+              We use only high end technologies, because you need to stay on track.
             </p>
           </div>
           <div className="col-md-4 text-center">
@@ -28,7 +28,7 @@ class Tools extends Component {
             <h2 style={{display: "inline-block"}}>Brainstorming with you</h2>
             <br />
             <p style={{display: "inline-block", marginLeft: 50, marginRight: 50}}>
-              Deliver a great experience to your customers with your simple, easy-to-use Slack app.
+              Let’s talk about this idea for aligning crackers with recent advancements in String Theory.
             </p>
           </div>
         </div>

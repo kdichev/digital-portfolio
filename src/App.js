@@ -12,7 +12,7 @@ import Contact from './sections/Contact';
 class App extends Component {
   render() {
     return (
-      <Layout>
+      <Layout onScroll={(e) => console.log("asd")}>
         <Hero />
         <Products />
         <Team />

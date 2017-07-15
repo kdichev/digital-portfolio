@@ -36,10 +36,10 @@ class Contact extends Component {
     return (
       <div className="row" style={{backgroundColor: "#17223A"}}>
         {/* <VideoCover /> */}
-        <div className="col-md-8 col-md-offset-2">
-        {/* <div className="col-md-8 col-md-offset-2" style={{display: "flex", alignItems: "center", justifyContent: "center"}}> */}
+        {/* <div className="col-md-8 col-md-offset-2"> */}
+        <div className="col-md-8 col-md-offset-2" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
           <div className="col-md-6 col-xs-12 ">
-            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png"/>
+            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
           </div>
           <div className="col-md-6 col-xs-12">
             <h1 style={{color: "white"}}>Lets do this.</h1>
