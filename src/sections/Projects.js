@@ -3,15 +3,10 @@ import Slider from 'react-slick'
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 import ActionHome1 from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
-import kiosk from './../assets/kiosk.PNG'
-import eurodeli from './../assets/eurodeli.PNG'
-import vililacosta from './../assets/vililacosta.PNG'
-import Case from './../components/Case'
 import Card from './../components/Card'
-import Title from './../components/Title'
 
 function SampleNextArrow(props) {
-  const {className, style, onClick} = props
+  const {onClick} = props
   return (
     <IconButton style={{position: "absolute", top:"30%", right: 0, width: 80, height: 80}} iconStyle={{width: 60, height: 60}}>
       <ActionHome1 onClick={onClick} color={"#3aa3e3"}/>
@@ -20,7 +15,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const {className, style, onClick} = props
+  const {onClick} = props
   return (
     <IconButton style={{position: "absolute", top:"30%", left: 0, width: 80, height: 80}} iconStyle={{width: 60, height: 60,}}>
       <ActionHome onClick={onClick} color={"#3aa3e3"}/>
@@ -38,7 +33,6 @@ class Projects extends Component {
     };
     return (
       <div className="row" style={{backgroundColor: "#F1F8FD", padding: "50px 0", position: "relative"}}>
-        {/* <Title text="Projects" /> */}
         <div className='container'>
         	<Slider
             {...settings}

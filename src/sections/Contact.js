@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import Title from './../components/Title'
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
@@ -40,7 +39,7 @@ class Contact extends Component {
         <div className="col-md-8 col-md-offset-2">
         {/* <div className="col-md-8 col-md-offset-2" style={{display: "flex", alignItems: "center", justifyContent: "center"}}> */}
           <div className="col-md-6 col-xs-12 ">
-            <img src="https://a.slack-edge.com/49235/img/developers/giant_file.png"/>
+            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png"/>
           </div>
           <div className="col-md-6 col-xs-12">
             <h1 style={{color: "white"}}>Lets do this.</h1>

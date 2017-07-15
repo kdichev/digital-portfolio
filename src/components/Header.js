@@ -3,6 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import './../App.css'
 const TITLE = "SK Consulting"
+
 class Header extends Component {
   constructor(props) {
   super(props);
@@ -15,7 +16,6 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    console.log(this.Header);
   }
 
   handleScroll = () => {
