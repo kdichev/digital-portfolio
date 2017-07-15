@@ -12,10 +12,30 @@ const style = {
 };
 
 class Card extends Component {
+  constructor(props) {
+  super(props);
+    this.state = {
+      zDepth: 1
+    };
+  }
+  handleMouseEnter = () => {
+    this.setState({
+      zDepth: 2
+    })
+  }
+
+  handleMouseLeave = () => {
+    this.setState({
+      zDepth: 1
+    })
+  }
+
   render() {
-    console.log(this.props.bgColor);
     return (
-      <Paper style={style} zDepth={1}>
+      <Paper
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        style={style} zDepth={this.state.zDepth}>
         <div style={{backgroundColor: this.props.bgColor, height: "75%", display: "flex", alignItems: "center", justifyContent: "center"}}>
             <img style={{height: 100, width: 100, borderRadius: 10}} src={this.props.imgSrc} />
         </div>

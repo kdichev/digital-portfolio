@@ -21,7 +21,6 @@ function SampleNextArrow(props) {
 
 function SamplePrevArrow(props) {
   const {className, style, onClick} = props
-  console.log(style);
   return (
     <IconButton style={{position: "absolute", top:"30%", left: 0, width: 80, height: 80}} iconStyle={{width: 60, height: 60,}}>
       <ActionHome onClick={onClick} color={"#3aa3e3"}/>
@@ -37,7 +36,6 @@ class Projects extends Component {
       prevArrow: <SamplePrevArrow />,
       autoPlay: false
     };
-    console.log(settings);
     return (
       <div className="row" style={{backgroundColor: "#F1F8FD", padding: "50px 0", position: "relative"}}>
         {/* <Title text="Projects" /> */}
