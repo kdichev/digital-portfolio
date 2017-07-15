@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Title from './../components/Title'
+import Row from './../components/Row'
+
 class Trust extends Component {
   render() {
     return (
-      <div className="row">
+      <Row>
         <Title text="We made a difference in" />
         <div className="col-md-2">
           <img alt="" style={{filter: "grayscale(100%)"}} src="https://logo.clearbit.com/ikea.com" />
@@ -28,7 +30,7 @@ class Trust extends Component {
         <div className="col-md-2">
           <img alt="" style={{filter: "grayscale(100%)"}} src="https://www.nodes.dk/wp-content/themes/nodes2016/img/devices/logo-logo-dark@2x.png" />
         </div>
-      </div>
+      </Row>
     );
   }
 }

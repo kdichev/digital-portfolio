@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './../App.css';
+import Row from './../components/Row'
 
 class Hero extends Component {
   constructor(props) {
   super(props);
     this.state = {
-      padding: 300
+      padding: 200
     };
   }
 
@@ -17,7 +18,7 @@ class Hero extends Component {
 
   handleScroll = () => {
     this.setState({
-      padding: 300 - (document.body.scrollTop / 6)
+      padding: 200 - (document.body.scrollTop / 6)
     })
   }
 
@@ -26,15 +27,15 @@ class Hero extends Component {
   }
   render() {
     return (
-      <div className="row" style={{height: 550, backgroundColor: "#17223A"}}>
+      <Row style={{height: 550, backgroundColor: "#17223A"}}>
           <div style={{textAlign: "center", padding:  10, paddingTop: this.state.padding}}>
-            <ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={700}>
+            <ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={650}>
               <h1 style={{color: "white"}}>We create digital products we are proud of. Tell us your idea.</h1>
               <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
-              <RaisedButton label="Learn more" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60, borderRadius: "60px"}} style={{height: 50}} />
+              <RaisedButton label="Learn more" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60, borderRadius: "60px"}} style={{height: 50, marginTop: 30}} />
             </ReactCSSTransitionGroup>
           </div>
-      </div>
+      </Row>
     );
   }
 }

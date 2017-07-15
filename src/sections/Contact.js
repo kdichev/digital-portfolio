@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import Row from './../components/Row'
 
 class Contact extends Component {
   constructor(props) {
@@ -34,14 +35,14 @@ class Contact extends Component {
       />,
     ];
     return (
-      <div className="row" style={{backgroundColor: "#17223A"}}>
+      <Row style={{backgroundColor: "#17223A"}}>
         {/* <VideoCover /> */}
-        {/* <div className="col-md-8 col-md-offset-2"> */}
+          {/* <div className="col-md-8 col-md-offset-2 col-xs-12"> */}
         <div className="col-md-8 col-md-offset-2" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-          <div className="col-md-6 col-xs-12 ">
-            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
+          <div className="col-md-6 col-xs-6">
+            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right", width: "100%", height: "auto"}}/>
           </div>
-          <div className="col-md-6 col-xs-12">
+          <div className="col-md-6 col-xs-6" style={{padding: 0}}>
             <h1 style={{color: "white"}}>Lets do this.</h1>
             <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
             <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
@@ -71,7 +72,7 @@ class Contact extends Component {
               rows={2}
             />
           </Dialog>
-      </div>
+      </Row>
     );
   }
 }

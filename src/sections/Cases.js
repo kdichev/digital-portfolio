@@ -5,11 +5,12 @@ import kiosk from './../assets/kiosk.PNG'
 import eurodeli from './../assets/eurodeli.PNG'
 import vililacosta from './../assets/vililacosta.PNG'
 import Case from './../components/Case'
+import Row from './../components/Row'
 
 class Cases extends Component {
   render() {
     return (
-      <div className="row">
+      <Row>
         <Title text="Cases"/>
         <Case
           heading="Euro Deli"
@@ -38,7 +39,7 @@ class Cases extends Component {
           leftWidth="50%"
           rightWidth="50%"
         />
-      </div>
+      </Row>
     );
   }
 }

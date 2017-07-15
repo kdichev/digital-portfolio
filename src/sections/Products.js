@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import './../App.css';
+import Row from './../components/Row'
 
 class Products extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Products extends Component {
 
   render() {
     return (
-      <div className="row" style={{ marginTop: 50, marginBottom: 50}}>
+      <Row style={{ marginTop: 50, marginBottom: 50}}>
         <ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={1000}>
           <div className="col-md-8 col-md-offset-2">
             <div className="col-md-4 text-center">
@@ -40,7 +41,7 @@ class Products extends Component {
             </div>
           </div>
         </ReactCSSTransitionGroup>
-      </div>
+      </Row>
     );
   }
 }

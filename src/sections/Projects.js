@@ -4,6 +4,7 @@ import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 import ActionHome1 from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 import Card from './../components/Card'
+import Row from './../components/Row'
 
 function SampleNextArrow(props) {
   const {onClick} = props
@@ -29,10 +30,12 @@ class Projects extends Component {
       dots: false,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
-      autoPlay: false
+      autoplay: true,
+      autoplaySpeed: 7000,
+      vertical: false
     };
     return (
-      <div className="row" style={{backgroundColor: "#F1F8FD", padding: "50px 0", position: "relative"}}>
+      <Row style={{backgroundColor: "#F1F8FD", padding: "50px 0", position: "relative"}}>
         <div className='container'>
         	<Slider
             {...settings}
@@ -81,7 +84,7 @@ class Projects extends Component {
             </div>
           </Slider>
         </div>
-      </div>
+      </Row>
     );
   }
 }
