@@ -16,15 +16,15 @@ class Cases extends Component {
           desctiption="project description"
           image={eurodeli}
           backgroundColor="#3aa3e3"
-          height="300px"
-          leftWidth="30%"
-          rightWidth="70%"
+          height="450px"
+          leftWidth="50%"
+          rightWidth="50%"
         /><br />
         <Case
           heading="Kiosk"
           desctiption="project description"
           image={kiosk}
-          backgroundColor="#7C49B8"
+          backgroundColor="#2ab27b"
           height="250px"
           leftWidth="60%"
           rightWidth="40%"
@@ -33,7 +33,7 @@ class Cases extends Component {
           heading="Vili La Costa"
           desctiption="project description"
           image={vililacosta}
-          backgroundColor="#2ab27b"
+          backgroundColor="#7C49B8"
           height="350px"
           leftWidth="50%"
           rightWidth="50%"

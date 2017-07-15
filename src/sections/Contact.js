@@ -37,35 +37,41 @@ class Contact extends Component {
     return (
       <div className="row" style={{backgroundColor: "#17223A"}}>
         {/* <VideoCover /> */}
-        <div style={{textAlign: "center", padding: 50}}>
-        <h1 style={{color: "white"}}>Contact us.</h1>
-        <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
-          <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
-        <Dialog
-          title="It is easy to contact us!"
-          actions={actions}
-          modal={false}
-          open={this.state.open}
-          onRequestClose={this.handleClose}
-        >
-          We will get back at you as soon as possible!
-          <br />
-          <TextField
-            hintText="John Doe"
-            floatingLabelText="Name"
-          /><br />
-          <TextField
-            hintText="johndoe@gmail.com"
-            floatingLabelText="Email"
-          /><br />
-          <TextField
-            hintText="Not Hotdog app"
-            floatingLabelText="Tell us more about your idea"
-            multiLine={true}
-            rows={2}
-          />
-        </Dialog>
+        <div className="col-md-8 col-md-offset-2">
+        {/* <div className="col-md-8 col-md-offset-2" style={{display: "flex", alignItems: "center", justifyContent: "center"}}> */}
+          <div className="col-md-6 col-xs-12 ">
+            <img src="https://a.slack-edge.com/49235/img/developers/giant_file.png"/>
+          </div>
+          <div className="col-md-6 col-xs-12">
+            <h1 style={{color: "white"}}>Lets do this.</h1>
+            <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
+            <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
+          </div>
         </div>
+          <Dialog
+            title="It is easy to contact us!"
+            actions={actions}
+            modal={false}
+            open={this.state.open}
+            onRequestClose={this.handleClose}
+          >
+            Tour the documentation and learn about what you can build on Slack.
+            <br />
+            <TextField
+              hintText="John Doe"
+              floatingLabelText="Name"
+            /><br />
+            <TextField
+              hintText="johndoe@gmail.com"
+              floatingLabelText="Email"
+            /><br />
+            <TextField
+              hintText="Not Hotdog app"
+              floatingLabelText="Tell us more about your idea"
+              multiLine={true}
+              rows={2}
+            />
+          </Dialog>
       </div>
     );
   }

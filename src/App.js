@@ -11,14 +11,19 @@ import Team from './sections/Team'
 import Trust from './sections/Trust'
 import Cases from './sections/Cases'
 import Contact from './sections/Contact'
+import Products from './sections/Products'
+import Tools from './sections/Tools'
+import Projects from './sections/Projects'
 
 class App extends Component {
   render() {
     return (
       <Layout>
         <Hero />
+        <Products />
         <Team />
-        <Cases />
+        <Tools />
+        <Projects />
         <Trust />
         <Contact />
       </Layout>

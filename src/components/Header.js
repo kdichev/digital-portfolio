@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
-const TITLE = "Sashko"
+const TITLE = "SK Consulting"
 
 class Header extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    console.log(this.Header);
   }
 
   handleScroll = () => {
@@ -43,6 +44,7 @@ class Header extends Component {
         style={this.state.style}
         titleStyle={this.state.titleColor}
         zDepth={this.state.zDepth}
+        ref={(header) => {this.Header = header}}
       />
     );
   }

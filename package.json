@@ -1,11 +1,13 @@
 {
   "name": "digital-portfolio",
+  "homepage" : "http://http://konstantindichev.com/dev",
   "version": "0.2.0",
   "private": true,
   "dependencies": {
     "material-ui": "^0.18.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-slick": "^0.14.11",
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
