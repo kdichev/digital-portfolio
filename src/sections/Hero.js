@@ -18,7 +18,7 @@ class Hero extends Component {
 
   handleScroll = () => {
     this.setState({
-      padding: 200 - (document.body.scrollTop / 6)
+      padding: 200 - (document.body.scrollTop / 4)
     })
   }
 
@@ -27,7 +27,7 @@ class Hero extends Component {
   }
   render() {
     return (
-      <Row style={{height: 550, backgroundColor: "#17223A"}}>
+      <Row style={{height: 550, background: "linear-gradient(45deg, #141E30 30%, #243B55 90%)"}}>
           <div style={{textAlign: "center", padding:  10, paddingTop: this.state.padding}}>
             <ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={650}>
               <h1 style={{color: "white"}}>We create digital products we are proud of. Tell us your idea.</h1>

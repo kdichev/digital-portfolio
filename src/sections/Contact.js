@@ -40,7 +40,7 @@ class Contact extends Component {
           {/* <div className="col-md-8 col-md-offset-2 col-xs-12"> */}
         <div className="col-md-8 col-md-offset-2" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
           <div className="col-md-6 col-xs-6">
-            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right", width: "100%", height: "auto"}}/>
+            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
           </div>
           <div className="col-md-6 col-xs-6" style={{padding: 0}}>
             <h1 style={{color: "white"}}>Lets do this.</h1>
