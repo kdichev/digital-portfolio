@@ -9,99 +9,69 @@ const TITLE = "SK Consulting"
 
 class Header extends Component {
   constructor(props) {
-  super(props);
+    super(props);
     this.state = {
-      style: {backgroundColor: "transparent", position: "fixed", width: "100%"},
-      titleColor: {color: "white"},
-      zDepth: 0,
-      slide: 0,
-      collapsed : false,
-      transparentCollapsed: false
+      transition : "all .3s cubic-bezier(.165,.84,.44,1)",
+      position: "fixed",
+      width: "100%"
     };
+  }
+
+  componentWillMount() {
+    this.hideAppBar();
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    this.toggleHeader(true);
+    this.toggleAppBar();
+    this.Element.addEventListener("transitionend", this.handleTransitionEventEnd);
   }
 
   handleScroll = () => {
-    // if (document.body.scrollTop > 0 && document.body.scrollTop < 101) {
-    //   this.toggleHeader(false);
-    // } else {
-    //   this.toggleHeader(true);
-    // }
-    var finished = false;
     if (document.body.scrollTop === 0) {
-      this.setState({
-        style: {backgroundColor: "transparent", position: "fixed", width: "100%"},
-        titleColor: {color: "white"},
-        zDepth: 0,
-        slide: 64
-      })
-      return
+      this.toggleAppBar();
     }
-    if (document.body.scrollTop > 101) {
-      //fixed WHITE header => slides down from 0 to 64
-      this.setState({
-        style: {backgroundColor: "white", position: "fixed",  width: "100%", zIndex: 2, boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px"},
-        titleColor: {color: "black"},
-        zDepth: 1,
-        slide: 64
-      });
-    } else {
-      // fixed WHITE header => slides up from 64 to 0
-      this.setState({
-        // style: {backgroundColor: "transparent", position: "fixed",   width: "100%", zIndex: 2},
-        // titleColor: {color: "white"},
-        label: "white",
-        zDepth: 0,
-        slide: 0
-      })
-    }
+  }
+
+  handleTransitionEventEnd = () => {
+    console.log("a transition has ended");
+  }
+
+  showAppBar = () => {
+    this.setState({
+      transform : "translate3d(0, 0px,0)"
+    })
+  }
+
+  hideAppBar = () => {
+    this.setState({
+      transform : "translate3d(0,-70px,0)"
+    })
+  }
+
+  toggleAppBar = () => {
+    this.hideAppBar()
+    setTimeout(() => {this.showAppBar()}, 300);
   }
 
   componentWillUnmount = () => {
     window.removeEventListener('scroll', this.handleScroll());
   }
 
-  animationState = (state) => {
-  }
-
-  toggleHeader = (bool) => {
-    if (bool) {
-      this.setState({
-        slide: 64
-      });
-    } else if (!bool) {
-      this.setState({
-        slide: 0
-      });
-    }
-  }
-
   render() {
     return (
-      <AnimateHeight
-        duration={ 350 }
-        height={this.state.slide}
-        onAnimationEnd={this.animationState("end")}
-        onAnimationStart={this.animationState("start")}
-        style={this.state.style}
-        id="header"
-      >
-        <AppBar
-          title={<ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={400}>
-            <div>{TITLE}</div>
-          </ReactCSSTransitionGroup>}
-          style={{backgroundColor: "transparent"}}
-          showMenuIconButton={false}
-          titleStyle={this.state.titleColor}
-          zDepth={5}
-          ref={(header) => {this.Header = header}}
-          iconElementRight={<FlatButton label="Contact us" labelStyle={this.state.titleColor} />}
-        />
-      </AnimateHeight>
+        <div style={this.state} ref={(el) => {this.Element = el}}>
+          <AppBar
+            title={<ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={400}>
+              <div>{TITLE}</div>
+            </ReactCSSTransitionGroup>}
+            showMenuIconButton={false}
+            titleStyle={this.state.titleColor}
+            zDepth={1}
+            ref={(header) => {this.Header = header}}
+            iconElementRight={<FlatButton label="Contact us" labelStyle={this.state.titleColor} onClick={this.toggleAppBar}/>}
+          />
+        </div>
     );
   }
 }

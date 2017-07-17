@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   handleScroll = () => {
-    console.log(document.body.scrollTop);
+    //console.log(document.body.scrollTop);
     if (document.body.scrollTop > 248) {
       this.setState({show: true})
     } else {
