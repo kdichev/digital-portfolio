@@ -11,20 +11,20 @@ class Hero extends Component {
       padding: 200
     };
   }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll = () => {
-    this.setState({
-      padding: 200 - (document.body.scrollTop / 4)
-    })
-  }
-
-  componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleScroll());
-  }
+  // 
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.handleScroll);
+  // }
+  //
+  // handleScroll = () => {
+  //   this.setState({
+  //     padding: 200 - (document.body.scrollTop / 4)
+  //   })
+  // }
+  //
+  // componentWillUnmount = () => {
+  //   window.removeEventListener('scroll', this.handleScroll());
+  // }
   render() {
     return (
       <Row style={{height: 550, background: "linear-gradient(45deg, #141E30 30%, #243B55 90%)"}}>
