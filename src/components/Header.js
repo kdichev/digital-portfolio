@@ -18,8 +18,9 @@ class Header extends Component {
         position: "fixed",
         width: "100%",
         zIndex: 999,
-      titleColor: {color: "white"},
-      backgroundColor: "transparent"
+        titleColor: {color: "white"},
+        backgroundColor: "transparent",
+        zDepth: 0
     };
   }
 
@@ -61,12 +62,14 @@ class Header extends Component {
     if (scroll === true) {
       this.setState({
         backgroundColor: "white",
-        titleColor: {color: "black"}
+        titleColor: {color: "black"},
+        zDepth: 1
       });
     } else {
       this.setState({
         backgroundColor: "transparent",
-        titleColor: "white"
+        titleColor: "white",
+        zDepth: 0
       });
     }
   }
@@ -82,12 +85,14 @@ class Header extends Component {
     if (scroll === false) {
       this.setState({
           backgroundColor: "transparent",
-          titleColor: {color: "white"}
+          titleColor: {color: "white"},
+          zDepth: 0
       });
     } else {
       this.setState({
           backgroundColor: "white",
-          titleColor: {color: "black"}
+          titleColor: {color: "black"},
+          zDepth: 1
       });
     }
   }
@@ -117,7 +122,7 @@ class Header extends Component {
             titleStyle={this.state.titleColor}
             style={this.state}
             backgroundColor={"red"}
-            zDepth={0}
+            zDepth={this.state.zDepth}
             ref={(header) => {this.Header = header}}
             iconElementRight={<FlatButton label="Contact us" labelStyle={this.state.titleColor} onClick={this.toggleAppBar}/>}
           />

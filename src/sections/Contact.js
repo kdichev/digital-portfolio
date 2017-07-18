@@ -10,7 +10,11 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      transition : "transform 300ms cubic-bezier(.165,.84,.44,1)",
+      transform: "",
+      opacity: 0,
+      transform : "translate3d(0, 0px,0)",
     };
   }
 
@@ -18,12 +22,24 @@ class Contact extends Component {
     addScrollEventListener(this.handleOnTopScroll);
   }
   handleOnTopScroll = () => {
-    // let scrollTop = document.body.scrollTop
-    // var dif = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    // var height = dif + document.documentElement.scrollHeight
-    // if (scrollTop === height) {
-    //   console.log("asd");
-    // }
+    let scrollTop = document.body.scrollTop
+    console.log(scrollTop);
+    var dif = (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    console.log("diff", dif);
+    // var height = dif + scrollTop
+    console.log(scrollTop === dif);
+    if (scrollTop === dif) {
+      console.log("asd");
+      this.setState({
+        transform : "translate3d(0, -70px,0)",
+        opacity: 1
+      })
+    } else {
+      this.setState({
+        transform : "translate3d(0, 0px,0)",
+        opacity: 0
+      })
+    }
   }
 
   handleOpen = () => {
@@ -53,13 +69,15 @@ class Contact extends Component {
         {/* <VideoCover /> */}
           {/* <div className="col-md-8 col-md-offset-2 col-xs-12"> */}
         <div className="col-md-8 col-md-offset-2" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-          <div className="col-md-6 col-xs-6">
-            <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
-          </div>
-          <div className="col-md-6 col-xs-6" style={{padding: 0}}>
-            <h1 style={{color: "white"}}>Lets do this.</h1>
-            <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
-            <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
+          <div style={this.state}>
+            <div className="col-md-6 col-xs-6">
+              <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
+            </div>
+            <div className="col-md-6 col-xs-6" style={{padding: 0}}>
+              <h1 style={{color: "white"}}>Lets do this.</h1>
+              <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
+              <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
+            </div>
           </div>
         </div>
           <Dialog
