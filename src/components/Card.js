@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import './../App.css'
+
 const style = {
   height: 220,
   width: 230,
@@ -37,7 +37,7 @@ class Card extends Component {
         onMouseLeave={this.handleMouseLeave}
         style={style} zDepth={this.state.zDepth}>
         <div style={{backgroundColor: this.props.bgColor, height: "75%", display: "flex", alignItems: "center", justifyContent: "center"}}>
-            <img style={{height: 100, width: 100, borderRadius: 10}} src={this.props.imgSrc} />
+            <img alt="" style={{height: 100, width: 100, borderRadius: 10}} src={this.props.imgSrc} />
         </div>
         <div style={{height: "25%", padding: 10}}>
           <h4 style={{margin: 0, float: "left"}}>{this.props.title}</h4>

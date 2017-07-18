@@ -21,7 +21,6 @@ class Case extends Component {
             backgroundSize: "cover"
           }}
           onHover>
-
           </div>
       </section>
     );
