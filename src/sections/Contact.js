@@ -4,6 +4,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import Row from './../components/Row'
+import {addScrollEventListener, removeScrollEventListener} from './../Lib/addScrollListener'
 
 class Contact extends Component {
   constructor(props) {
@@ -13,6 +14,18 @@ class Contact extends Component {
     };
   }
 
+  componentDidMount() {
+    addScrollEventListener(this.handleOnTopScroll);
+  }
+  handleOnTopScroll = () => {
+    // let scrollTop = document.body.scrollTop
+    // var dif = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    // var height = dif + document.documentElement.scrollHeight
+    // if (scrollTop === height) {
+    //   console.log("asd");
+    // }
+  }
+
   handleOpen = () => {
     this.setState({open: true});
   };
@@ -20,6 +33,7 @@ class Contact extends Component {
   handleClose = () => {
     this.setState({open: false});
   };
+
   render() {
     const actions = [
       <FlatButton

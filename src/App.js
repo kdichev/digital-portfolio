@@ -36,7 +36,7 @@ class App extends Component {
 
   handleScroll = () => {
     //console.log(document.body.scrollTop);
-    if (document.body.scrollTop > 248) {
+    if (document.body.scrollTop > 1) {
       this.setState({show: true,
         style: {
           position: "fixed",
@@ -77,7 +77,7 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <FloatingActionButton style={this.state.style}>
+        <FloatingActionButton style={this.state.style} backgroundColor="#10a887">
           <ContentAdd style={this.state.style1}/>
         </FloatingActionButton>
         <Hero />
