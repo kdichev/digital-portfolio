@@ -5,73 +5,123 @@ import './../App.css'
 import AnimateHeight from 'react-animate-height'
 import ReactDOM from 'react-dom'
 import FlatButton from 'material-ui/FlatButton'
+import Animated from './Animated'
+import {addScrollEventListener, removeScrollEventListener} from './../Lib/addScrollListener'
+let scroll = false
 const TITLE = "SK Consulting"
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      transition : "all .3s cubic-bezier(.165,.84,.44,1)",
-      position: "fixed",
-      width: "100%"
+        transition : "transform 300ms cubic-bezier(.165,.84,.44,1)",
+        position: "fixed",
+        width: "100%",
+        zIndex: 999,
+      titleColor: {color: "white"},
+      backgroundColor: "transparent"
     };
   }
 
-  componentWillMount() {
-    this.hideAppBar();
-  }
-
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
     this.toggleAppBar();
-    this.Element.addEventListener("transitionend", this.handleTransitionEventEnd);
+    addScrollEventListener(this.handleOnTopScroll);
+    addScrollEventListener(this.handleFirstScroll);
   }
 
-  handleScroll = () => {
-    if (document.body.scrollTop === 0) {
+  handleOnTopScroll = () => {
+    let scrollTop = document.body.scrollTop
+    if (scrollTop === 0) {
       this.toggleAppBar();
     }
   }
 
-  handleTransitionEventEnd = () => {
-    console.log("a transition has ended");
+  handleFirstScroll = () => {
+    let scrollTop = document.body.scrollTop
+    //console.log(scroll);
+    if (!scroll) {
+      this.toggleAppBar();
+      scroll = true
+      return
+    }
+    if (scrollTop === 0) {
+      scroll = false
+    }
   }
 
-  showAppBar = () => {
+
+  slideInDown = () => {
+    //console.log("Slide in Down");
     this.setState({
-      transform : "translate3d(0, 0px,0)"
-    })
+        position: "fixed",
+        width: "100%",
+        transform : "translate3d(0, 0px,0)",
+        zIndex: 999
+    });
+    if (scroll === true) {
+      this.setState({
+        backgroundColor: "white",
+        titleColor: {color: "black"}
+      });
+    } else {
+      this.setState({
+        backgroundColor: "transparent",
+        titleColor: "white"
+      });
+    }
   }
 
-  hideAppBar = () => {
+  slideOutUp = () => {
+    //console.log("Slide out Up");
     this.setState({
-      transform : "translate3d(0,-70px,0)"
-    })
+        position: "fixed",
+        width: "100%",
+        transform : "translate3d(0,-70px,0)",
+        zIndex: 999,
+    });
+    if (scroll === false) {
+      this.setState({
+          backgroundColor: "transparent",
+          titleColor: {color: "white"}
+      });
+    } else {
+      this.setState({
+          backgroundColor: "white",
+          titleColor: {color: "black"}
+      });
+    }
   }
 
   toggleAppBar = () => {
-    this.hideAppBar()
-    setTimeout(() => {this.showAppBar()}, 300);
+    this.slideOutUp()
+    setTimeout(() => this.slideInDown(), 500);
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleScroll());
+    removeScrollEventListener('scroll', this.handleScroll());
+    removeScrollEventListener('scroll', this.handleFirstScroll());
   }
+  // handleTransitionEventEnd = () => {
+  //   console.log("a transition has ended");
+  // }
 
   render() {
+    //console.log(this.state.titleColor);
     return (
-        <div style={this.state} ref={(el) => {this.Element = el}}>
+        <Animated>
           <AppBar
             title={<ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={400}>
               <div>{TITLE}</div>
             </ReactCSSTransitionGroup>}
             showMenuIconButton={false}
             titleStyle={this.state.titleColor}
-            zDepth={1}
+            style={this.state}
+            backgroundColor={"red"}
+            zDepth={0}
             ref={(header) => {this.Header = header}}
             iconElementRight={<FlatButton label="Contact us" labelStyle={this.state.titleColor} onClick={this.toggleAppBar}/>}
           />
-        </div>
+        </Animated>
     );
   }
 }

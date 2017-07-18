@@ -4,6 +4,10 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './../App.css';
 import Row from './../components/Row'
 
+let style = {
+  transition : "all 1000ms cubic-bezier(.165,.84,.44,1)",
+  opacity: 1
+}
 class Hero extends Component {
   constructor(props) {
   super(props);
@@ -11,31 +15,37 @@ class Hero extends Component {
       padding: 200
     };
   }
-  // 
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.handleScroll);
-  // }
-  //
-  // handleScroll = () => {
-  //   this.setState({
-  //     padding: 200 - (document.body.scrollTop / 4)
-  //   })
-  // }
-  //
-  // componentWillUnmount = () => {
-  //   window.removeEventListener('scroll', this.handleScroll());
-  // }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+      if (document.body.scrollTop > 1) {
+        style.opacity = 0
+        style.transform = "translate3d(0, -150px,0)"
+      } else {
+        style.opacity = 1
+        style.transform = "translate3d(0, 0px,0)"
+      }
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll());
+  }
   render() {
     return (
-      <Row style={{height: 550, background: "linear-gradient(45deg, #141E30 30%, #243B55 90%)"}}>
-          <div style={{textAlign: "center", padding:  10, paddingTop: this.state.padding}}>
-            <ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={650}>
-              <h1 style={{color: "white"}}>We create digital products we are proud of. Tell us your idea.</h1>
-              <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
-              <RaisedButton label="Learn more" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60, borderRadius: "60px"}} style={{height: 50, marginTop: 30}} />
-            </ReactCSSTransitionGroup>
-          </div>
-      </Row>
+        <Row style={{height: 550, background: "linear-gradient(45deg, #141E30 30%, #243B55 90%)"}}>
+            <div style={{textAlign: "center", padding:  10, paddingTop: this.state.padding}}>
+              <ReactCSSTransitionGroup transitionName="slide" transitionAppear={true} transitionAppearTimeout={650}>
+                <div style={style}>
+                  <h1 style={{color: "white"}}>We create digital products we are proud of. Tell us your idea.</h1>
+                  <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
+                  <RaisedButton label="Learn more" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60, borderRadius: "60px"}} style={{height: 50, marginTop: 30}} />
+                </div>
+              </ReactCSSTransitionGroup>
+            </div>
+        </Row>
     );
   }
 }
