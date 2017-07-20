@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 
+const style = {
+  display:"flex",
+  flexDirection:"column",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center"
+}
+
 class Header extends Component {
   render() {
     return (
-      <h1 style={{textAlign: "center", marginTop:50, marginBottom: 50}}>
-        {this.props.text}
-      </h1>
+      <div style={style}>
+        <h1>
+          {this.props.text}
+        </h1>
+      </div>
     );
   }
 }

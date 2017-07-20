@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './../assets/bootstrap.css'
 import PropTypes from 'prop-types'
 
 class Row extends Component {
@@ -7,7 +6,7 @@ class Row extends Component {
     const {className, style, children} = this.props
     return (
       <div
-        className={"row " + className}
+        className={className}
         style={style}
       >
           {children}
