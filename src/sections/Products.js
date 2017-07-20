@@ -6,9 +6,9 @@ const rowStyle = {
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
-  justifyContent: "space-around",
+  justifyContent: "center",
   paddingBottom: "3%",
-  paddingTop: "3%",
+  paddingTop: "3%"
 }
 
 const cardStyle = {
@@ -16,22 +16,25 @@ const cardStyle = {
   flexDirection:"column",
   justifyContent: "center",
   alignItems: "center",
-  textAlign: "center"
+  textAlign: "center",
+  width: 400,
+  paddingLeft: 50,
+  paddingRight: 50,
 }
 
 const data = [
   {
-    header: "Project Development",
+    title: "Project Development",
     text: "Create apps for a brand new interface with bot users, slash commands and notifications.",
     img: "https://a.slack-edge.com/49235/img/developers/icon_build.png"
   },
   {
-    header: "Software Development",
+    title: "Software Development",
     text: "Connect with Slack's 4 million daily active users through the App Directory.",
     img: "https://a.slack-edge.com/49235/img/developers/icon_connect.png"
   },
   {
-    header: "Hosting Solutions",
+    title: "Hosting Solutions",
     text: "Deliver a great experience to your customers with your simple, easy-to-use Slack app.",
     img: "https://a.slack-edge.com/49235/img/developers/icon_delight.png"
   }
@@ -50,7 +53,7 @@ class Products extends Component {
             {data.map((item) =>
               <div style={cardStyle}>
                 <img alt="presentation" src={item.img} />
-                <h2>{item.header}</h2>
+                <h2>{item.title}</h2>
                 <br />
                 <p>
                   {item.text}

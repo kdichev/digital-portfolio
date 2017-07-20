@@ -8,16 +8,16 @@ const style = {
   textAlign: "center"
 }
 
-class Header extends Component {
+class Text extends Component {
   render() {
     return (
       <div style={style}>
-        <h1>
+        <p>
           {this.props.text}
-        </h1>
+        </p>
       </div>
     );
   }
 }
 
-export default Header;
+export default Text;

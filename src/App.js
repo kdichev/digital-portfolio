@@ -28,7 +28,7 @@ class App extends Component {
         <Tools />
         {/* <Projects /> */}
         {/* <Trust /> */}
-        {/* <Contact /> */}
+        <Contact />
       </Layout>
     );
   }
