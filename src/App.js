@@ -10,11 +10,11 @@ import Contact from './sections/Contact';
 // import Cases from './sections/Cases';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-      // this.state = {
-      // };
-  }
+  // constructor(props) {
+  //   super(props);
+  //     this.state = {
+  //     };
+  // }
 
   render() {
     return (

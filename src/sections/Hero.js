@@ -4,11 +4,11 @@ import './../App.css';
 import Row from './../components/Row'
 
 class Hero extends Component {
-  constructor(props) {
-  super(props);
-    // this.state = {
-    // };
-  }
+  // constructor(props) {
+  // super(props);
+  //   this.state = {
+  //   };
+  // }
 
   render() {
     return (

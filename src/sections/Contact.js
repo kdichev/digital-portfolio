@@ -4,7 +4,6 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import Row from './../components/Row'
-import {addScrollEventListener, removeScrollEventListener} from './../Lib/addScrollListener'
 
 class Contact extends Component {
   constructor(props) {
