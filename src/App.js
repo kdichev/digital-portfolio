@@ -6,6 +6,7 @@ import Team from './sections/Team';
 import Tools from './sections/Tools';
 import Contact from './sections/Contact';
 import Header from './components/Header'
+import ScrollPosition from './components/ScrollPosition'
 // import Projects from './sections/Projects';
 // import Trust from './sections/Trust';
 // import Cases from './sections/Cases';
@@ -21,14 +22,16 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <Header />
-        <Hero />
-        <Products />
-        <Team />
-        <Tools />
-        {/* <Projects /> */}
-        {/* <Trust /> */}
-        <Contact />
+        <ScrollPosition>
+          <Header />
+          <Hero />
+          <Products />
+          <Team />
+          <Tools />
+          {/* <Projects /> */}
+          {/* <Trust /> */}
+          <Contact />
+        </ScrollPosition>
       </Layout>
     );
   }
