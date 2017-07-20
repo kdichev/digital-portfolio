@@ -48,8 +48,8 @@ class Tools extends Component {
         <div>
           <Title text="How we do it"/>
           <div style={containerStyle}>
-            {data.map((item) =>
-              <div style={cardStyle}>
+            {data.map((item, index) =>
+              <div style={cardStyle} key={index}>
                 <img alt="presentation" src={item.img} />
                 <h2>{item.title}</h2>
                 <br />

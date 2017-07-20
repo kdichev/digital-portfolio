@@ -45,8 +45,8 @@ class Team extends Component {
         <Title text="Team overview"/>
         <Text text="Such experience, big team, much money"/>
         <div style={containerStyle}>
-          {data.map((item) =>
-            <div style={cardStyle}>
+          {data.map((item, index) =>
+            <div style={cardStyle} key={index}>
               <div style={{borderRadius: "50%", width: 200, height: 200, margin: "0 auto"}}>
                 <img alt="presentation" src={item.img} />
               </div>

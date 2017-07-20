@@ -4,10 +4,10 @@ import Hero from './sections/Hero';
 import Products from './sections/Products';
 import Team from './sections/Team';
 import Tools from './sections/Tools';
-import Projects from './sections/Projects';
-import Trust from './sections/Trust';
 import Contact from './sections/Contact';
 import Header from './components/Header'
+// import Projects from './sections/Projects';
+// import Trust from './sections/Trust';
 // import Cases from './sections/Cases';
 // import Footer from './Footer'
 

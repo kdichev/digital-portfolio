@@ -50,8 +50,8 @@ class Products extends Component {
   render() {
     return (
       <Row style={rowStyle}>
-            {data.map((item) =>
-              <div style={cardStyle}>
+            {data.map((item, index) =>
+              <div style={cardStyle} key={index}>
                 <img alt="presentation" src={item.img} />
                 <h2>{item.title}</h2>
                 <br />

@@ -6,7 +6,9 @@ import TextField from 'material-ui/TextField';
 import Row from './../components/Row'
 
 const rowStyle = {
-  backgroundColor: "#17223A"
+  backgroundColor: "#17223A",
+  paddingBottom: "3%",
+  paddingTop: "3%"
 }
 
 const containerStyle = {
@@ -54,7 +56,7 @@ class Contact extends Component {
           {/* <div className="col-md-8 col-md-offset-2 col-xs-12"> */}
         <div style={containerStyle}>
             <div>
-              <img alt="" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
+              <img alt="" width="250px" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
             </div>
             <div style={{padding: 0}}>
               <h1 style={{color: "white"}}>Lets do this.</h1>
