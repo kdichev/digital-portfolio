@@ -10,36 +10,8 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
-      transition : "transform 300ms cubic-bezier(.165,.84,.44,1)",
-      transform: "",
-      opacity: 0,
-      transform : "translate3d(0, 0px,0)",
+      open: false
     };
-  }
-
-  componentDidMount() {
-    addScrollEventListener(this.handleOnTopScroll);
-  }
-  handleOnTopScroll = () => {
-    let scrollTop = document.body.scrollTop
-    console.log(scrollTop);
-    var dif = (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-    console.log("diff", dif);
-    // var height = dif + scrollTop
-    console.log(scrollTop === dif);
-    if (scrollTop === dif) {
-      console.log("asd");
-      this.setState({
-        transform : "translate3d(0, -70px,0)",
-        opacity: 1
-      })
-    } else {
-      this.setState({
-        transform : "translate3d(0, 0px,0)",
-        opacity: 0
-      })
-    }
   }
 
   handleOpen = () => {
