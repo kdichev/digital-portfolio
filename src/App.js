@@ -8,6 +8,7 @@ import Projects from './sections/Projects';
 import Trust from './sections/Trust';
 import Contact from './sections/Contact';
 // import Cases from './sections/Cases';
+// import Footer from './Footer'
 
 class App extends Component {
   // constructor(props) {
