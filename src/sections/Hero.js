@@ -21,6 +21,16 @@ class Hero extends Component {
   //   this.state = {
   //   };
   // }
+  //
+  
+  shouldComponentUpdate (nextProps) {
+    return this.isInRange(nextProps.scrollState, 5, 14);
+  }
+
+  //Utility function returns boolean if value within a given range
+  isInRange = (val, min, max) => {
+    return val >= min && val <= max;
+  }
 
   render() {
     return (
@@ -30,6 +40,9 @@ class Hero extends Component {
           </h1>
           <p style={{color: "white", fontSize: 17}}>
             We have loads of experience and loads of power!!!
+          </p>
+          <p style={{color: "white", fontSize: 17}}>
+            {this.props.scrollState}
           </p>
           <RaisedButton
             label="Learn more"

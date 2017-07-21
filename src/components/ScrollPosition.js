@@ -15,17 +15,25 @@ class ScrollPosition extends Component {
 
   handleScroll = () => {
     this.setState({
-      scrollTop: document.body.scrollTop
+      scrollTop: this.calculateAnimationProgress(document.body)
     })
   }
 
+  calculateAnimationProgress (target) {
+    return this.mapRange(target.scrollTop, 0, target.scrollHeight - window.innerHeight, 0, 100).toFixed(0);
+  }
+
+  mapRange = (value, inMin, inMax, outMin, outMax) => (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+
   render() {
-    var children = this.props.children.map((child, index) => {
-      return React.cloneElement(child, {scrollState: this.state.scrollTop, key: index} )
-    });
+    const { children } = this.props
+    const { scrollTop } = this.state
+
     return (
       <div>
-        {children}
+        {React.Children.map(children, (child, index) =>
+          React.cloneElement(child, {scrollState: scrollTop, key: index})
+        )}
       </div>
     );
   }

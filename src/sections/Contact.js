@@ -53,7 +53,6 @@ class Contact extends Component {
     return (
       <Row style={rowStyle}>
         {/* <VideoCover /> */}
-          {/* <div className="col-md-8 col-md-offset-2 col-xs-12"> */}
         <div style={containerStyle}>
             <div>
               <img alt="" width="250px" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
