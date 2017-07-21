@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {addScrollEventListener, removeScrollEventListener} from './../Lib/addScrollListener'
+import {addScrollEventListener} from './../Lib/addScrollListener'
 
 class ScrollPosition extends Component {
   constructor(props) {
@@ -14,18 +14,14 @@ class ScrollPosition extends Component {
   }
 
   handleScroll = () => {
-    // this.setState({
-    //   scrollTop: document.body.scrollTop
-    // })
-  }
-
-  componentWillUnmount() {
-    removeScrollEventListener(this.handleScroll)
+    this.setState({
+      scrollTop: document.body.scrollTop
+    })
   }
 
   render() {
-    var children = this.props.children.map(child => {
-      return React.cloneElement(child, {scrollState: this.state.scrollTop})
+    var children = this.props.children.map((child, index) => {
+      return React.cloneElement(child, {scrollState: this.state.scrollTop, key: index} )
     });
     return (
       <div>
