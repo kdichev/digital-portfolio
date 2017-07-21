@@ -10,8 +10,8 @@ const rowStyle = {
   alignItems: "center",
   textAlign: "center",
   marginTop: 64,
-  paddingBottom: "13%",
-  paddingTop: "13%",
+  paddingBottom: "9%",
+  paddingTop: "9%",
   background: "linear-gradient(45deg, #141E30 30%, #243B55 90%)"
 }
 
