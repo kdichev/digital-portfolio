@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Title from './../components/Title'
 import Row from './../components/Row'
+import Animation from './../components/Animation'
 
 const rowStyle = {
   paddingBottom: "3%",
@@ -16,11 +17,15 @@ const containerStyle = {
 
 const cardStyle = {
   display:"flex",
+  flex: 1,
+  minWidth: 300,
+  maxWidth: 400,
   flexDirection:"column",
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  width: 400
+  paddingLeft: 15,
+  paddingRight: 15
 }
 
 const data = [
@@ -45,12 +50,14 @@ class Tools extends Component {
   render() {
     return (
       <Row style={rowStyle}>
-        <div>
+        <Animation>
           <Title text="How we do it"/>
           <div style={containerStyle}>
             {data.map((item, index) =>
               <div style={cardStyle} key={index}>
-                <img alt="presentation" src={item.img} />
+                <div style={{borderRadius: "50%", width: 200, height: 200, margin: "0 auto"}}>
+                  <img alt="presentation" src={item.img} />
+                </div>
                 <h2>{item.title}</h2>
                 <br />
                 <p>
@@ -59,7 +66,7 @@ class Tools extends Component {
               </div>
             )}
           </div>
-        </div>
+        </Animation>
       </Row>
     );
   }

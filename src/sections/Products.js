@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './../App.css';
 import Row from './../components/Row'
+import Animation from './../components/Animation'
 
 const rowStyle = {
   display: "flex",
@@ -13,13 +14,15 @@ const rowStyle = {
 
 const cardStyle = {
   display:"flex",
+  flex: 1,
+  minWidth: 300,
+  maxWidth: 400,
   flexDirection:"column",
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  width: 400,
-  paddingLeft: 50,
-  paddingRight: 50,
+  paddingLeft: 15,
+  paddingRight: 15
 }
 
 const data = [
@@ -49,7 +52,8 @@ class Products extends Component {
 
   render() {
     return (
-      <Row style={rowStyle}>
+      <Animation slideOutIn={150}>
+        <Row style={rowStyle}>
             {data.map((item, index) =>
               <div style={cardStyle} key={index}>
                 <img alt="presentation" src={item.img} />
@@ -60,7 +64,8 @@ class Products extends Component {
                 </p>
               </div>
             )}
-      </Row>
+        </Row>
+      </Animation>
     );
   }
 }

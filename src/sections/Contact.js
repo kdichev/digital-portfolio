@@ -4,6 +4,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import Row from './../components/Row'
+import Animation from './../components/Animation'
 
 const rowStyle = {
   backgroundColor: "#17223A",
@@ -24,7 +25,8 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      animate: 0
     };
   }
 
@@ -35,6 +37,27 @@ class Contact extends Component {
   handleClose = () => {
     this.setState({open: false});
   };
+
+  // componentDidUpdate() {
+  //   console.log("asd");
+  //   this.setState({
+  //     animate: 150
+  //   })
+  // }
+  //
+  // shouldComponentUpdate (nextProps, nextState) {
+  //   console.log(nextProps, nextState);
+  //   if (nextProps.scrollState === "92") {
+  //     console.log("asd");
+  //     return true
+  //   }
+  //   return false
+  // }
+  //
+  // //Utility function returns boolean if value within a given range
+  // isInRange = (val, min, max) => {
+  //   return val >= min && val <= max;
+  // }
 
   render() {
     const actions = [
@@ -53,16 +76,18 @@ class Contact extends Component {
     return (
       <Row style={rowStyle}>
         {/* <VideoCover /> */}
-        <div style={containerStyle}>
-            <div>
-              <img alt="" width="250px" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
-            </div>
-            <div style={{padding: 0}}>
-              <h1 style={{color: "white"}}>Lets do this.</h1>
-              <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
-              <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
-            </div>
-        </div>
+        <Animation slideOutIn={this.state.animate}>
+          <div style={containerStyle}>
+              <div>
+                <img alt="" width="250px" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
+              </div>
+              <div style={{padding: 0}}>
+                <h1 style={{color: "white"}}>Lets do this.</h1>
+                <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
+                <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
+              </div>
+          </div>
+        </Animation>
         <Dialog
           title="It is easy to contact us!"
           actions={actions}
