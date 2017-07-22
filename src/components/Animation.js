@@ -5,7 +5,7 @@ class Animation extends Component {
   super(props);
     this.state = {
       transition : "all 600ms cubic-bezier(.165,.84,.44,1)",
-      transform: this.props.slideOutIn ? `translate3d(0, ${this.props.slideOutIn}px, 0)` : 'initial',
+      transform: `translate3d(${this.props.tx}px, ${this.props.ty}px, ${this.props.tz}px)`,
       opacity: 0
     };
   }
@@ -14,7 +14,7 @@ class Animation extends Component {
     setTimeout(() => {
       this.setState({
         opacity: 1,
-        transform: this.props.slideOutIn ? "translate3d(0, 0px, 0)" : 'initial'
+        transform: "translate3d(0, 0px, 0)"
       })
     }, 200)
   }
@@ -22,7 +22,11 @@ class Animation extends Component {
   render() {
     return (
       <div
-        style={this.state}>
+        style={{
+          transition: this.state.transition,
+          transform: this.state.transform,
+          opacity: this.state.opacity
+        }}>
         {this.props.children}
       </div>
     );

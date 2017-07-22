@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import Layout from './components/Layout';
-import Hero from './sections/Hero';
-import Products from './sections/Products';
-import Team from './sections/Team';
-import Tools from './sections/Tools';
-import Contact from './sections/Contact';
-import Header from './components/Header'
-import ScrollPosition from './components/ScrollPosition'
+import asyncComponent from './components/AsyncComponent'
+
+const AsyncHero = asyncComponent(() => import('./sections/Hero'))
+const AsyncProducts = asyncComponent(() => import('./sections/Products'))
+const AsyncTeam = asyncComponent(() => import('./sections/Team'))
+const AsyncTools = asyncComponent(() => import('./sections/Tools'))
+const AsyncContact = asyncComponent(() => import('./sections/Contact'))
+const AsyncHeader = asyncComponent(() => import('./components/Header'))
+const AsyncScrollPosition = asyncComponent(() => import('./components/ScrollPosition'))
+const AsyncLayout = asyncComponent(() => import('./components/Layout'))
 // import Projects from './sections/Projects';
 // import Trust from './sections/Trust';
 // import Cases from './sections/Cases';
@@ -21,18 +23,18 @@ class App extends Component {
 
   render() {
     return (
-      <Layout>
-        <ScrollPosition>
-          <Header />
-          <Hero />
-          <Products />
-          <Team />
-          <Tools />
+      <AsyncLayout>
+        <AsyncScrollPosition>
+          <AsyncHeader />
+          <AsyncHero />
+          <AsyncProducts />
+          <AsyncTeam />
+          <AsyncTools />
           {/* <Projects /> */}
           {/* <Trust /> */}
-          <Contact />
-        </ScrollPosition>
-      </Layout>
+          <AsyncContact />
+        </AsyncScrollPosition>
+      </AsyncLayout>
     );
   }
 }

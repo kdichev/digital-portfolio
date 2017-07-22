@@ -4,8 +4,6 @@ import './../App.css'
 import Animation from './../components/Animation'
 import data from './../data'
 
-const TITLE = "SK Consulting"
-
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +13,7 @@ class Header extends Component {
 
   render() {
     return (
-      <Animation slideOutIn={-64}>
+      <Animation tx={0} ty={-64} tz={0}>
         <AppBar
           title={data.header.title}
           showMenuIconButton={false}

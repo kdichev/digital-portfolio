@@ -19,7 +19,6 @@ const containerStyle = {
 const cardStyle = {
   display:"flex",
   flex: 1,
-  minWidth: 300,
   maxWidth: 400,
   flexDirection:"column",
   justifyContent: "center",

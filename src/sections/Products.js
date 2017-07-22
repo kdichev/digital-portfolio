@@ -16,7 +16,6 @@ const rowStyle = {
 const cardStyle = {
   display:"flex",
   flex: 1,
-  minWidth: 300,
   maxWidth: 400,
   flexDirection:"column",
   justifyContent: "center",
@@ -35,7 +34,7 @@ class Products extends Component {
 
   render() {
     return (
-      <Animation slideOutIn={150}>
+      <Animation tx={0} ty={70} tz={0}>
         <Row style={rowStyle}>
             {data.products.map((item, index) =>
               <div style={cardStyle} key={index}>

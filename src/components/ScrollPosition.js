@@ -14,9 +14,9 @@ class ScrollPosition extends Component {
   }
 
   handleScroll = () => {
-    this.setState({
-      scrollTop: this.calculateAnimationProgress(document.body)
-    })
+    // this.setState({
+    //   scrollTop: this.calculateAnimationProgress(document.body)
+    // })
   }
 
   calculateAnimationProgress (target) {

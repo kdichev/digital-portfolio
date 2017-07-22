@@ -39,7 +39,7 @@ module.exports = {
   tools: [
     {
       title: "Working agile",
-      text: "We focus on eliminating the barriers to getting work done efficiently.r",
+      text: "We focus on eliminating the barriers to getting work done efficiently.",
       img: "https://a.slack-edge.com/49235/img/developers/icon_build.png"
     },
     {
