@@ -3,6 +3,7 @@ import Title from './../components/Title'
 import Text from './../components/Text'
 import Row from './../components/Row'
 import Animation from './../components/Animation'
+import data from './../data'
 
 const rowStyle = {
   backgroundColor: "#F1F8FD",
@@ -26,19 +27,6 @@ const cardStyle = {
   width: 500
 }
 
-const data = [
-  {
-    name: "Konstantin Dichev",
-    position: "Front End developer",
-    img: "http://web-lom.com/img/Konstantin_Dichev.png"
-  },
-  {
-    name: "Aleksandar Aleksandrov",
-    position: "Back End development",
-    img: "http://web-lom.com/img/Aleksandar_Aleksandrov_sashef.png"
-  },
-]
-
 class Team extends Component {
   render() {
     return (
@@ -47,7 +35,7 @@ class Team extends Component {
           <Title text="Team overview"/>
           <Text text="Such experience, big team, much money"/>
           <div style={containerStyle}>
-            {data.map((item, index) =>
+            {data.team.map((item, index) =>
               <div style={cardStyle} key={index}>
                 <div style={{borderRadius: "50%", width: 200, height: 200, margin: "0 auto"}}>
                   <img alt="presentation" src={item.img} />

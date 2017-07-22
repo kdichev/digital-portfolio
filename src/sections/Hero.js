@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './../App.css';
 import Row from './../components/Row'
 import Animation from './../components/Animation'
+import data from './../data'
 
 const rowStyle = {
   display: "flex",
@@ -29,16 +30,16 @@ class Hero extends Component {
             slideOutIn={-150}
           >
             <h1 style={{color: "white"}}>
-              We create digital products we are proud of. Tell us your idea.
+              {data.hero.title}
             </h1>
             <p style={{color: "white", fontSize: 17}}>
-              We have loads of experience and loads of power!!!
+              {data.hero.title}
             </p>
             <p style={{color: "white", fontSize: 17}}>
               {this.props.scrollState}
             </p>
             <RaisedButton
-              label="Learn more"
+              label={data.hero.buttonLabel}
               backgroundColor="#10a887"
               labelColor="white"
               labelStyle={{paddingLeft: 60, paddingRight: 60, borderRadius: "60px"}}

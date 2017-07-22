@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import './../App.css'
 import Animation from './../components/Animation'
+import data from './../data'
 
 const TITLE = "SK Consulting"
 
@@ -16,7 +17,7 @@ class Header extends Component {
     return (
       <Animation slideOutIn={-64}>
         <AppBar
-          title={TITLE}
+          title={data.header.title}
           showMenuIconButton={false}
           style={{backgroundColor: "transparent", position: "fixed"}}
           titleStyle={{color: "white"}}

@@ -5,6 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import Row from './../components/Row'
 import Animation from './../components/Animation'
+import data from './../data'
 
 const rowStyle = {
   backgroundColor: "#17223A",
@@ -82,9 +83,9 @@ class Contact extends Component {
                 <img alt="" width="250px" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
               </div>
               <div style={{padding: 0}}>
-                <h1 style={{color: "white"}}>Lets do this.</h1>
-                <p style={{color: "white", fontSize: 17}}>We have loads of experience and loads of power!!!</p>
-                <RaisedButton label="Contact us" backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
+                <h1 style={{color: "white"}}>{data.contact.title}</h1>
+                <p style={{color: "white", fontSize: 17}}>{data.contact.text}</p>
+                <RaisedButton label={data.contact.buttonLabel} backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
               </div>
           </div>
         </Animation>
