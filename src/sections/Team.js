@@ -78,10 +78,10 @@ class Team extends Component {
     return (
       <Row style={rowStyle}>
         <Animation>
-          <Title text="Team overview"/>
-          <Text text="Such experience, big team, much money"/>
+          <Title text={data.team.title}/>
+          <Text text={data.team.text}/>
           <div style={containerStyle}>
-            {data.team.map((item, index) =>
+            {data.team.members.map((item, index) =>
               <div style={cardStyle} key={index}>
                 <div
                 key={index}

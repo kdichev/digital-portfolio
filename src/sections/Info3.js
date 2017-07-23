@@ -21,14 +21,13 @@ const rowStyle = {
 
 const containerStyle = {
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "row-reverse",
   flexWrap: "wrap",
-  justifyContent: "center",
-  alignItems: "center",
+  justifyContent: "space-between",
   overflow: "hidden"
 }
 
-class Info2 extends Component {
+class Info3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,20 +40,22 @@ class Info2 extends Component {
     return (
       <Row style={rowStyle}>
         {/* <VideoCover /> */}
-        <Animation  tx={1500} ty={0} tz={0}>
           <div style={containerStyle}>
+            <Animation  tx={1500} ty={0} tz={0}>
+              <div>
+              <img src="https://a.slack-edge.com/66f9/img/tour/ways_ssb.png" width="100%"/>
+              </div>
+            </Animation>
+            <Animation tx={-1500} ty={0} tz={0}>
               <div style={{margin: 50}}>
-              <img src="https://a.slack-edge.com/0180/img/tour/everywhere.png" width="100%"/>
+              <h1>We develop with mind in you</h1>
+              <p>We will bring you tools so that you can scale and monitor your business</p>
               </div>
-              <div style={{width: 470, margin: 50}}>
-              <h1>Our solutions are fully responsive</h1>
-              <p>You will be able to target maximum users by having mobile, tablets and desktops covered and you can also target the native markets.</p>
-              </div>
+            </Animation>
           </div>
-        </Animation>
       </Row>
     );
   }
 }
 
-export default Info2;
+export default Info3;

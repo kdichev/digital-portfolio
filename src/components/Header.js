@@ -12,12 +12,13 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      transition: -64
     };
   }
 
   render() {
     return (
-      <Animation tx={0} ty={-64} tz={0}>
+      <Animation tx={0} ty={this.state.transition} tz={0}>
         <AppBar
           showMenuIconButton={false}
           style={{backgroundColor: "transparent", position: "fixed", color: "white", height: 64}}
@@ -28,7 +29,7 @@ class Header extends Component {
             <Typography type="title" color="inherit" style={{flex: 1}}>
               {data.header.title}
             </Typography>
-            <Button raised>Login</Button>
+            <Button style={{color: "white"}}>Blog</Button>
           </Toolbar>
          </AppBar>
       </Animation>

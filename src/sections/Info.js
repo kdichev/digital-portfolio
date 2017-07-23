@@ -47,11 +47,9 @@ class Info extends Component {
               <img src="https://a.slack-edge.com/f3494/img/uk/drag_drop_share.png" width="100%"/>
               </div>
               <div style={{width: 470, margin: 50}}>
-              <h1>Drag, drop, and share your files.</h1>
-              <p>Not just your messages, but all your files, images, PDFs, documents, and spreadsheets can be dropped right into Slack
-                and shared with anyone you want. Add comments, star for later reference, and it’s all completely searchable.
-                If you use any services like Google Drive, Dropbox, or Box, just paste the link and that
-                document is immediately in sync and searchable too.</p>
+              <h1>We deliver for performance</h1>
+              <p>Server side or client side, we can deliver both to the table.
+                 Load your initial view using the server, use the client for the rest</p>
               </div>
           </div>
         </Animation>

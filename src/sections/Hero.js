@@ -12,7 +12,7 @@ const rowStyle = {
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  height: "550px",
+  height: "500px",
   background: "linear-gradient(45deg, #141E30 30%, #243B55 90%)",
 }
 
