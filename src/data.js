@@ -40,12 +40,12 @@ module.exports = {
     {
       title: "Working agile",
       text: "We focus on eliminating the barriers to getting work done efficiently.",
-      img: "https://a.slack-edge.com/49235/img/developers/icon_build.png"
+      img: "https://thumb1.shutterstock.com/display_pic_with_logo/1827386/535043050/stock-vector-agile-development-vector-icon-535043050.jpg"
     },
     {
-      title: "Using top tech",
-      text: "We use only high end technologies, because you need to stay on track.",
-      img: "https://a.slack-edge.com/49235/img/developers/icon_connect.png"
+      title: "Stacking MERN 2.0",
+      text: "We build with MongoDB, ExpressJS, React and NodeJS to bring your cutting edge solutions",
+      img: "http://mern.io/images/universe-v2.svg"
     },
     {
       title: "Brainstorming with you",

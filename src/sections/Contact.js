@@ -39,26 +39,26 @@ class Contact extends Component {
     this.setState({open: false});
   };
 
-  // componentDidUpdate() {
-  //   console.log("asd");
-  //   this.setState({
-  //     animate: 150
-  //   })
-  // }
-  //
+  componentDidUpdate() {
+    console.log("asd");
+    // this.setState({
+    //   animate: 150
+    // })
+  }
+
   // shouldComponentUpdate (nextProps, nextState) {
   //   console.log(nextProps, nextState);
-  //   if (nextProps.scrollState === "92") {
+  //   if (nextProps.scrollState > "80%") {
   //     console.log("asd");
   //     return true
   //   }
   //   return false
   // }
-  //
-  // //Utility function returns boolean if value within a given range
-  // isInRange = (val, min, max) => {
-  //   return val >= min && val <= max;
-  // }
+
+  //Utility function returns boolean if value within a given range
+  isInRange = (val, min, max) => {
+    return val >= min && val <= max;
+  }
 
   render() {
     const actions = [
@@ -77,15 +77,27 @@ class Contact extends Component {
     return (
       <Row style={rowStyle}>
         {/* <VideoCover /> */}
-        <Animation slideOutIn={this.state.animate}>
+        <Animation  tx={0} ty={150} tz={0}>
           <div style={containerStyle}>
               <div>
-                <img alt="" width="250px" src="https://a.slack-edge.com/49235/img/developers/giant_file.png" style={{float: "right"}}/>
+                <img
+                  alt=""
+                  width="250px"
+                  src="https://a.slack-edge.com/49235/img/developers/giant_file.png"
+                  style={{float: "right"}}
+                />
               </div>
               <div style={{padding: 0}}>
                 <h1 style={{color: "white"}}>{data.contact.title}</h1>
                 <p style={{color: "white", fontSize: 17}}>{data.contact.text}</p>
-                <RaisedButton label={data.contact.buttonLabel} backgroundColor="#10a887" labelColor="white" labelStyle={{paddingLeft: 60, paddingRight: 60}} style={{height: 50}} onTouchTap={this.handleOpen}/>
+                <RaisedButton
+                  label={data.contact.buttonLabel}
+                  backgroundColor="#10a887"
+                  labelColor="white"
+                  labelStyle={{paddingLeft: 60, paddingRight: 60}}
+                  style={{height: 50}}
+                  onTouchTap={this.handleOpen}
+                />
               </div>
           </div>
         </Animation>

@@ -28,7 +28,6 @@ const cardStyle = {
   paddingRight: 15
 }
 
-
 class Tools extends Component {
   render() {
     return (

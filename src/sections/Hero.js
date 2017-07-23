@@ -11,7 +11,7 @@ const rowStyle = {
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  height: "500px",
+  height: "550px",
   background: "linear-gradient(45deg, #141E30 30%, #243B55 90%)",
 }
 
@@ -37,7 +37,7 @@ class Hero extends Component {
             </p>
             <RaisedButton
               label={data.hero.buttonLabel}
-              backgroundColor="#10a887"
+              backgroundColor="#0070ba"
               labelColor="white"
               labelStyle={{paddingLeft: 60, paddingRight: 60}}
               style={{height: 50, marginTop: 30}}

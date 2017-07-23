@@ -14,7 +14,7 @@ class Animation extends Component {
     setTimeout(() => {
       this.setState({
         opacity: 1,
-        transform: "translate3d(0, 0px, 0)"
+        transform: "translate3d(0, 0px, 0)",
       })
     }, 200)
   }
@@ -25,7 +25,8 @@ class Animation extends Component {
         style={{
           transition: this.state.transition,
           transform: this.state.transform,
-          opacity: this.state.opacity
+          opacity: this.state.opacity,
+          ...this.props.style
         }}>
         {this.props.children}
       </div>
