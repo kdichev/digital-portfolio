@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import Row from './../components/Row'
 import Animation from './../components/Animation'
 import data from './../data'
+import List, { ListItem, ListItemText } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import IconButton from 'material-ui/IconButton';
+import Typography from 'material-ui/Typography';
+import Slide from 'material-ui/transitions/Slide';
 
 const rowStyle = {
   backgroundColor: "#17223A",
@@ -31,13 +37,14 @@ class Contact extends Component {
     };
   }
 
-  handleOpen = () => {
-    this.setState({open: true});
+  handleRequestClose = () => {
+    this.setState({ open: false });
   };
 
-  handleClose = () => {
-    this.setState({open: false});
+  handleOpen = () => {
+    this.setState({ open: true });
   };
+
 
   componentDidUpdate() {
     console.log("asd");
@@ -62,12 +69,12 @@ class Contact extends Component {
 
   render() {
     const actions = [
-      <FlatButton
+      <Button
         label="Cancel"
         primary={true}
         onTouchTap={this.handleClose}
       />,
-      <FlatButton
+      <Button
         label="Submit"
         primary={true}
         keyboardFocused={true}
@@ -90,40 +97,41 @@ class Contact extends Component {
               <div style={{padding: 0}}>
                 <h1 style={{color: "white"}}>{data.contact.title}</h1>
                 <p style={{color: "white", fontSize: 17}}>{data.contact.text}</p>
-                <RaisedButton
-                  label={data.contact.buttonLabel}
-                  backgroundColor="#10a887"
-                  labelColor="white"
-                  labelStyle={{paddingLeft: 60, paddingRight: 60}}
-                  style={{height: 50}}
+                <Button
+                  style={{height: 50, marginTop: 30, backgroundColor: "#10a887", color: "white",paddingLeft: 60, paddingRight: 60}}
+                  raised
                   onTouchTap={this.handleOpen}
-                />
+                >
+                  {data.contact.buttonLabel}
+                </Button>
               </div>
           </div>
         </Animation>
         <Dialog
-          title="It is easy to contact us!"
-          actions={actions}
-          modal={false}
+          fullScreen
           open={this.state.open}
-          onRequestClose={this.handleClose}
+
+          transition={<Slide direction="right" />}
         >
-          Tour the documentation and learn about what you can build on Slack.
-          <br />
-          <TextField
-            hintText="John Doe"
-            floatingLabelText="Name"
-          /><br />
-          <TextField
-            hintText="johndoe@gmail.com"
-            floatingLabelText="Email"
-          /><br />
-          <TextField
-            hintText="Not Hotdog app"
-            floatingLabelText="Tell us more about your idea"
-            multiLine={true}
-            rows={2}
-          />
+          <AppBar style={{position: "relative"}}>
+            <Toolbar>
+              <Typography type="title" color="inherit" style={{flex: 1}}>
+                Sound
+              </Typography>
+              <Button color="contrast" onClick={this.handleRequestClose}>
+                save
+              </Button>
+            </Toolbar>
+          </AppBar>
+          <List>
+            <ListItem button>
+              <ListItemText primary="Phone ringtone" secondary="Titania" />
+            </ListItem>
+            <Divider />
+            <ListItem button>
+              <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+            </ListItem>
+          </List>
         </Dialog>
       </Row>
     );

@@ -9,6 +9,8 @@ const AsyncContact = asyncComponent(() => import('./sections/Contact'))
 const AsyncHeader = asyncComponent(() => import('./components/Header'))
 const AsyncScrollPosition = asyncComponent(() => import('./components/ScrollPosition'))
 const AsyncLayout = asyncComponent(() => import('./components/Layout'))
+const AsyncInfo = asyncComponent(() => import('./sections/Info'))
+const AsyncInfo2 = asyncComponent(() => import('./sections/Info2'))
 // import Projects from './sections/Projects';
 // import Trust from './sections/Trust';
 // import Cases from './sections/Cases';
@@ -30,6 +32,8 @@ class App extends Component {
           <AsyncProducts />
           <AsyncTeam />
           <AsyncTools />
+          <AsyncInfo />
+          <AsyncInfo2 />
           {/* <Projects /> */}
           {/* <Trust /> */}
           <AsyncContact />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
+import Button from 'material-ui/Button';
 class Case extends Component {
   render() {
     return (
@@ -8,7 +8,7 @@ class Case extends Component {
         <div style={{width: this.props.leftWidth, backgroundColor: this.props.backgroundColor, height: "100%", borderRadius: "6px 0  0 6px", float: "left"}}>
           <h1 style={{marginLeft: 30, marginTop: 55, color: "white"}}>{this.props.heading}</h1>
           <p style={{marginLeft: 30, color: "white"}}>{this.props.desctiption}</p>
-          <FlatButton label="Read" labelStyle={{color: "white"}} style={{border: "1px solid white", marginLeft: 30}} />
+          <Button label="Read" labelStyle={{color: "white"}} style={{border: "1px solid white", marginLeft: 30}} />
         </div>
         <div
           style={{

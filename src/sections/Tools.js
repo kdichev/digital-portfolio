@@ -38,7 +38,7 @@ class Tools extends Component {
             {data.tools.map((item, index) =>
               <div style={cardStyle} key={index}>
                 <div style={{borderRadius: "50%", width: 200, height: 200, margin: "0 auto"}}>
-                  <img alt="presentation" src={item.img} />
+                  <img alt="presentation" src={item.img} width="100%"/>
                 </div>
                 <h2>{item.title}</h2>
                 <br />
