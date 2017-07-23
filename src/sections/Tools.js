@@ -11,25 +11,6 @@ const rowStyle = {
   paddingTop: "3%"
 }
 
-const containerStyle = {
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  justifyContent: "center",
-}
-
-const cardStyle = {
-  display:"flex",
-  flex: 1,
-  maxWidth: 400,
-  flexDirection:"column",
-  justifyContent: "center",
-  alignItems: "center",
-  textAlign: "center",
-  paddingLeft: 15,
-  paddingRight: 15
-}
-
 const styleSheet = createStyleSheet('ToolItem', {
   root: {
     transition : "all 300ms cubic-bezier(.165,.84,.44,1)",
@@ -78,20 +59,11 @@ class Tools extends Component {
           <Title text={data.tools.title}/>
           <div className={this.props.classes.container}>
             {data.tools.tool.map((item, index) =>
-              // <div style={cardStyle} key={index}>
-              //   <div style={{borderRadius: "50%", width: 200, height: 200, margin: "0 auto"}}>
-              //     <img alt="presentation" src={item.img} width="100%"/>
-              //   </div>
-              //   <h2>{item.title}</h2>
-              //   <p>
-              //     {item.text}
-              //   </p>
-              //   <br />
-              // </div>
               <Badge
                 item={item}
                 index={index}
                 classes={this.props.classes}
+                key={index}
               />
             )}
           </div>

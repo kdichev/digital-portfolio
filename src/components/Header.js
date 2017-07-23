@@ -6,7 +6,6 @@ import data from './../data'
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-import IconButton from 'material-ui/IconButton';
 
 class Header extends Component {
   constructor(props) {
@@ -20,7 +19,6 @@ class Header extends Component {
     return (
       <Animation tx={0} ty={this.state.transition} tz={0}>
         <AppBar
-          showMenuIconButton={false}
           style={{backgroundColor: "transparent", position: "fixed", color: "white", height: 64}}
           ref={(header) => {this.Header = header}}
           elevation={0}

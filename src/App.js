@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import asyncComponent from './components/AsyncComponent'
+// import asyncComponent from './components/AsyncComponent'
 
 import Layout from './components/Layout';
 import Footer from './components/Footer';

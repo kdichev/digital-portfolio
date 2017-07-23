@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'material-ui/Button';
 import Dialog from 'material-ui/Dialog';
-import TextField from 'material-ui/TextField';
 import Row from './../components/Row'
 import Animation from './../components/Animation'
 import data from './../data'
@@ -9,7 +8,6 @@ import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import Slide from 'material-ui/transitions/Slide';
 
@@ -47,7 +45,6 @@ class Contact extends Component {
 
 
   componentDidUpdate() {
-    console.log("asd");
     // this.setState({
     //   animate: 150
     // })
@@ -68,19 +65,6 @@ class Contact extends Component {
   }
 
   render() {
-    const actions = [
-      <Button
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      <Button
-        label="Submit"
-        primary={true}
-        keyboardFocused={true}
-        onTouchTap={this.handleClose}
-      />,
-    ];
     return (
       <Row style={rowStyle}>
         {/* <VideoCover /> */}
