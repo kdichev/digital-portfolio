@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import './../App.css';
 import Row from './../components/Row'
 import Animation from './../components/Animation'
 import data from './../data'
+
 
 const rowStyle = {
   display: "flex",
@@ -35,13 +36,12 @@ class Hero extends Component {
             <p style={{color: "white", fontSize: 17}}>
               {this.props.scrollState}
             </p>
-            <RaisedButton
-              label={data.hero.buttonLabel}
-              backgroundColor="#0070ba"
-              labelColor="white"
-              labelStyle={{paddingLeft: 60, paddingRight: 60}}
-              style={{height: 50, marginTop: 30}}
-            />
+            <Button
+              style={{height: 50, marginTop: 30, backgroundColor: "#0070ba", color: "white",paddingLeft: 60, paddingRight: 60}}
+              raised
+            >
+              {data.hero.buttonLabel}
+            </Button>
           </Animation>
         </Row>
     );
