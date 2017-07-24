@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import asyncComponent from './components/AsyncComponent'
+import asyncComponent from './components/AsyncComponent'
 
 import Layout from './components/Layout';
 import Footer from './components/Footer';
@@ -8,9 +8,9 @@ import Products from './sections/Products';
 import Team from './sections/Team';
 import Tools from './sections/Tools';
 import Contact from './sections/Contact';
-import Info from './sections/Info';
-import Info2 from './sections/Info2';
-import Info3 from './sections/Info3';
+// import Info from './sections/Info';
+// import Info2 from './sections/Info2';
+// import Info3 from './sections/Info3';
 import Header from './components/Header'
 import ScrollPosition from './components/ScrollPosition'
 import Divider from 'material-ui/Divider';
@@ -23,8 +23,9 @@ import Divider from 'material-ui/Divider';
 // const AsyncHeader = asyncComponent(() => import('./components/Header'))
 // const AsyncScrollPosition = asyncComponent(() => import('./components/ScrollPosition'))
 // const AsyncLayout = asyncComponent(() => import('./components/Layout'))
-// const AsyncInfo = asyncComponent(() => import('./sections/Info'))
-// const AsyncInfo2 = asyncComponent(() => import('./sections/Info2'))
+const AsyncInfo = asyncComponent(() => import('./sections/Info'))
+const AsyncInfo2 = asyncComponent(() => import('./sections/Info2'))
+const AsyncInfo3 = asyncComponent(() => import('./sections/Info3'))
 
 class App extends Component {
   // constructor(props) {
@@ -57,13 +58,11 @@ class App extends Component {
           <Team />
           <Tools />
           <Divider light />
-          <Info3 />
+          <AsyncInfo3 />
           <Divider light />
-          <Info />
+          <AsyncInfo />
           <Divider light />
-          <Info2 />
-          {/* <Projects /> */}
-          {/* <Trust /> */}
+          <AsyncInfo2 />
           <Contact />
           <Footer />
         </ScrollPosition>

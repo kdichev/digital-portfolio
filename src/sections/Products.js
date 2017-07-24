@@ -51,21 +51,6 @@ class Products extends Component {
     };
   }
 
-  handleMouseEnter = (e, index) => {
-    console.log(e.target.id);
-    this.setState({
-      scale: 1.1,
-      zDepth: 1,
-    })
-  }
-
-  handleMouseLeave = (e, index) => {
-    console.log(e.target.id);
-    this.setState({
-      scale: 1,
-      zDepth: 0
-    })
-  }
   render() {
     return (
       <Animation tx={0} ty={70} tz={0}>
